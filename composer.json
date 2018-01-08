@@ -1,0 +1,20 @@
+{
+    "name": "preussio/nlu-client",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "René Preuß",
+            "email": "rene@preuss.io"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0",
+        "ramsey/uuid": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "PreussIO\\NLU\\": "src/PreussIO/NLU/"
+        }
+    }
+}
