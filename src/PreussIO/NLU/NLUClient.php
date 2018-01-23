@@ -7,18 +7,34 @@
 
 namespace PreussIO\NLU;
 
+use Firebase\JWT\JWT;
 use GuzzleHttp\Client;
 use PreussIO\NLU\Agent\Session;
 
 class NLUClient
 {
     private $guzzle;
+    private $jwtToken;
+    private $jwtClaims;
 
-    public function __construct($agentId, $options = [])
+    public function __construct($jwtToken, $options = [])
     {
-        $options['guzzle']['base_uri'] = $options['guzzle']['base_uri'] ?? sprintf('http://api.nlu.hostinfin.com/agents/%s/', $agentId);
+        $this->jwtToken = $jwtToken;
+        $this->jwtClaims = JWT::jsonDecode(JWT::urlsafeB64Decode(explode('.', $this->jwtToken)[1]));
+
+        $options['guzzle']['base_uri'] = $options['guzzle']['base_uri'] ?? 'https://api.nlu.opennlu.com';
 
         $this->guzzle = new Client($options['guzzle']);
+    }
+
+    public function getJwtToken()
+    {
+        return $this->jwtToken;
+    }
+
+    public function getJwtClaims()
+    {
+        return $this->jwtClaims;
     }
 
     public function createSession(): Session

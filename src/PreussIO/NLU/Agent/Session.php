@@ -19,8 +19,12 @@ class Session
     public function __construct(NLUClient $nlu)
     {
         $this->nlu = $nlu;
-        $this->response = json_decode((string) $nlu->getGuzzle()->request('POST', 'sessions', [
-            'headers'  => ['content-type' => 'application/json', 'Accept' => 'application/json'],
+        $this->response = json_decode((string) $nlu->getGuzzle()->request('POST', sprintf('agents/%s/sessions', $nlu->getJwtClaims()->agent_id), [
+            'headers'  => [
+                'content-type' => 'application/json',
+                'Accept' => 'application/json',
+                'Authorization' => sprintf('Bearer %s', $nlu->getJwtToken()),
+            ],
             'body' => json_encode([])
         ])->getBody(), true);
     }

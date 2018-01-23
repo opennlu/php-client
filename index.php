@@ -11,7 +11,11 @@ use PreussIO\NLU\NLUClient;
 
 require __DIR__.'/vendor/autoload.php';
 
-$nlu = new NLUClient(1);
+$nlu = new NLUClient('access_token', [
+    'guzzle' => [
+        'base_uri' => 'http://development.api.nlu.opennlu.com:8080'
+    ]
+]);
 
 $session = $nlu->createSession();
 

@@ -33,8 +33,12 @@ class Response
         $this->session = $session;
         $this->message = $message;
 
-        $this->response = json_decode((string) $nlu->getGuzzle()->request('POST', sprintf('sessions/%s/parse', $session->getId()), [
-            'headers'  => ['content-type' => 'application/json', 'Accept' => 'application/json'],
+        $this->response = json_decode((string) $nlu->getGuzzle()->request('POST', sprintf('agents/%s/sessions/%s/parse', $nlu->getJwtClaims()->agent_id, $session->getId()), [
+            'headers'  => [
+                'content-type' => 'application/json',
+                'Accept' => 'application/json',
+                'Authorization' => sprintf('Bearer %s', $nlu->getJwtToken()),
+            ],
             'body' => json_encode([
                 'query' => $message,
                 'context' => array_map(function (Context $context) {
