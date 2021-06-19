@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OpenNLU\\OpenNLU\\": "src/"
+            "OpenNLU\\Client\\": "src/"
         }
     }
 }

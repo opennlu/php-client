@@ -5,13 +5,13 @@
  * Proprietary and confidential.
  */
 
-namespace OpenNLU\OpenNLU;
+namespace OpenNLU\Client;
 
 use Firebase\JWT\JWT;
-use GuzzleHttp\Client as GuzzleClient;
-use OpenNLU\OpenNLU\Agent\Session;
+use GuzzleHttp\Client;
+use OpenNLU\Client\Agent\Session;
 
-class Client
+class OpenNLU
 {
     private $guzzle;
     private $jwtToken;
@@ -24,7 +24,7 @@ class Client
 
         $options['guzzle']['base_uri'] = $options['guzzle']['base_uri'] ?? 'https://api.nlu.opennlu.net';
 
-        $this->guzzle = new GuzzleClient($options['guzzle']);
+        $this->guzzle = new Client($options['guzzle']);
     }
 
     public function getJwtToken()
@@ -42,7 +42,7 @@ class Client
         return new Session($this);
     }
 
-    public function getGuzzle()
+    public function getGuzzle(): Client
     {
         return $this->guzzle;
     }

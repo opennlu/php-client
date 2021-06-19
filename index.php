@@ -7,11 +7,11 @@
 
 namespace example;
 
-use OpenNLU\OpenNLU\Client;
+use OpenNLU\Client\OpenNLU;
 
 require __DIR__.'/vendor/autoload.php';
 
-$nlu = new Client('access_token', [
+$nlu = new OpenNLU('access_token', [
     'guzzle' => [
         'base_uri' => 'http://development.api.nlu.opennlu.net:8080'
     ]

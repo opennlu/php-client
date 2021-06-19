@@ -5,7 +5,7 @@
  * Proprietary and confidential.
  */
 
-namespace OpenNLU\OpenNLU\Agent\Response;
+namespace OpenNLU\Client\Agent\Response;
 
 
 class Fulfillment
