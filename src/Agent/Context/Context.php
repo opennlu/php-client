@@ -5,7 +5,7 @@
  * Proprietary and confidential.
  */
 
-namespace PreussIO\NLU\Agent\Context;
+namespace OpenNLU\OpenNLU\Agent\Context;
 
 
 class Context

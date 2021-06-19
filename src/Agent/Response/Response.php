@@ -5,11 +5,11 @@
  * Proprietary and confidential.
  */
 
-namespace PreussIO\NLU\Agent\Response;
+namespace OpenNLU\OpenNLU\Agent\Response;
 
-use PreussIO\NLU\Agent\Context\Context;
-use PreussIO\NLU\Agent\Session;
-use PreussIO\NLU\NLUClient;
+use OpenNLU\OpenNLU\Agent\Context\Context;
+use OpenNLU\OpenNLU\Agent\Session;
+use OpenNLU\OpenNLU\Client;
 
 class Response
 {
@@ -23,11 +23,11 @@ class Response
 
     /**
      * AgentResponse constructor.
-     * @param NLUClient $nlu
+     * @param Client $nlu
      * @param Session $session
      * @param string $message
      */
-    public function __construct(NLUClient $nlu, Session $session, string $message)
+    public function __construct(Client $nlu, Session $session, string $message)
     {
         $this->nlu = $nlu;
         $this->session = $session;

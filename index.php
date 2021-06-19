@@ -7,13 +7,13 @@
 
 namespace example;
 
-use PreussIO\NLU\NLUClient;
+use OpenNLU\OpenNLU\Client;
 
 require __DIR__.'/vendor/autoload.php';
 
-$nlu = new NLUClient('access_token', [
+$nlu = new Client('access_token', [
     'guzzle' => [
-        'base_uri' => 'http://development.api.nlu.opennlu.com:8080'
+        'base_uri' => 'http://development.api.nlu.opennlu.net:8080'
     ]
 ]);
 

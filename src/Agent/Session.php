@@ -5,10 +5,10 @@
  * Proprietary and confidential.
  */
 
-namespace PreussIO\NLU\Agent;
+namespace OpenNLU\OpenNLU\Agent;
 
-use PreussIO\NLU\Agent\Response\Response;
-use PreussIO\NLU\NLUClient;
+use OpenNLU\OpenNLU\Agent\Response\Response;
+use OpenNLU\OpenNLU\Client;
 
 class Session
 {
@@ -16,7 +16,7 @@ class Session
     private $context = [];
     private $response;
 
-    public function __construct(NLUClient $nlu)
+    public function __construct(Client $nlu)
     {
         $this->nlu = $nlu;
         $this->response = json_decode((string) $nlu->getGuzzle()->request('POST', sprintf('agents/%s/sessions', $nlu->getJwtClaims()->agent_id), [

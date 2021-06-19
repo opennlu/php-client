@@ -5,7 +5,7 @@
  * Proprietary and confidential.
  */
 
-namespace PreussIO\NLU\Agent\Response;
+namespace OpenNLU\OpenNLU\Agent\Response;
 
 
 class Property
