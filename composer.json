@@ -1,5 +1,5 @@
 {
-    "name": "preussio/nlu-client",
+    "name": "opennlu/client",
     "type": "library",
     "license": "proprietary",
     "authors": [
