@@ -1,5 +1,5 @@
 {
-    "name": "opennlu/client",
+    "name": "nlu/client",
     "type": "library",
     "license": "proprietary",
     "authors": [
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OpenNLU\\Client\\": "src/"
+            "NLU\\Client\\": "src/"
         }
     }
 }

@@ -5,13 +5,13 @@
  * Proprietary and confidential.
  */
 
-namespace OpenNLU\Client;
+namespace NLU\Client;
 
 use Firebase\JWT\JWT;
 use GuzzleHttp\Client;
-use OpenNLU\Client\Agent\Session;
+use NLU\Client\Agent\Session;
 
-class OpenNLU
+class NLU
 {
     private $guzzle;
     private $jwtToken;
@@ -22,7 +22,7 @@ class OpenNLU
         $this->jwtToken = $jwtToken;
         $this->jwtClaims = JWT::jsonDecode(JWT::urlsafeB64Decode(explode('.', $this->jwtToken)[1]));
 
-        $options['guzzle']['base_uri'] = $options['guzzle']['base_uri'] ?? 'https://api.nlu.opennlu.net';
+        $options['guzzle']['base_uri'] = $options['guzzle']['base_uri'] ?? 'https://api.nlu.nlu.net';
 
         $this->guzzle = new Client($options['guzzle']);
     }

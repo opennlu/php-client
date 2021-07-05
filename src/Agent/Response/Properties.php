@@ -5,7 +5,7 @@
  * Proprietary and confidential.
  */
 
-namespace OpenNLU\Client\Agent\Response;
+namespace NLU\Client\Agent\Response;
 
 
 class Properties

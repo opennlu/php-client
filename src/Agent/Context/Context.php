@@ -5,7 +5,7 @@
  * Proprietary and confidential.
  */
 
-namespace OpenNLU\Client\Agent\Context;
+namespace NLU\Client\Agent\Context;
 
 
 class Context
